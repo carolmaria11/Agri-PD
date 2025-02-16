@@ -69,7 +69,7 @@ tqa_instance = TableQuestionAnswering()
 tqa_instance.load_table('Model_assest/DiseaseChatbotData.csv')
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/abc', methods=['GET', 'POST'])
 def home():
     answer = None  # Initialize answer as None
     if request.method == 'POST':
@@ -82,7 +82,7 @@ def home():
 
 
 
-@app.route('/index')
+@app.route('/')
 def ai_detect_page():
     return render_template('index.html')
 

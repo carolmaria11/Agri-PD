@@ -1,47 +1,118 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>LDD</title>
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Hero-Clean-Reverse-images.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Navbar-With-Button-icons.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        background-color: #f5efe6;
+      }
 
-<body>
-  <nav class="navbar navbar-expand-md bg-body py-3">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}"><span>Home</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+      main {
+        flex: 1;
+        background-color: #f5efe6;
+      }
+
+      .navbar {
+        background-color: rgb(4, 46, 4);
+      }
+
+      .navbar-brand,
+      .nav-link,
+      .btn-primary {
+        color: white !important;
+      }
+
+      footer {
+        background-color: rgb(4, 46, 4);
+        color: white;
+        text-align: center;
+        padding: 12px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md py-3">
+      <div class="container">
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="{{ url_for('home') }}"
+        >
+          <span class="fs-5">Home</span>
+        </a>
+        <button
+          data-bs-toggle="collapse"
+          class="navbar-toggler"
+          data-bs-target="#navcol-1"
+        >
+          <span class="visually-hidden">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navcol-1">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link active" href="{{ url_for('ai_detect_page') }}">Detect</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('supplement') }}">Supplement</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"></a></li>
-            </ul>
-            <button class="btn btn-primary" type="button">
-              <a href="/response" style="text-decoration: none; color: white;">ChatBot</a>
-            </button>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item mx-4 fs-5">
+              <a class="nav-link" href="#">Common Diseases </a>
+            </li>
+            <li class="nav-item mx-4 fs-5">
+              <a class="nav-link" href="#">Prevention & Care Tips </a>
+            </li>
+          </ul>
+          <a
+            href="#"
+            class="btn btn-primary fs-5"
+            style="
+              text-decoration: none;
+              background-color: #8b4513;
+              border-color: #8b4513;
+              color: white;
+              padding: 5px 30px;
+            "
+          >
+            Contact Us
+          </a>
         </div>
-    </div>
-</nav>
-  {% block content %}
-  
-  
-  
-  {% endblock  %}
+      </div>
+    </nav>
 
-  <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
-<script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
-<script>
-  document.getElementById("toggleNavbarButton").addEventListener("click", function() {
-      // When the button is clicked, toggle the visibility of the Bootstrap navbar
-      $("#navcol-1").toggleClass("show");
-  });
-</script>
-</body>
+    <main>{% block content %} {% endblock %}</main>
 
+    <footer>
+      <p>© 2024 Leaf Disease Detection | All Rights Reserved</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script>
+      document
+        .getElementById("toggleNavbarButton")
+        .addEventListener("click", function () {
+          $("#navcol-1").toggleClass("show");
+        });
+    </script>
+  </body>
 </html>
