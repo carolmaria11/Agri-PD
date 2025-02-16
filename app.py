@@ -53,7 +53,7 @@ def prediction(image_path):
     index = np.argmax(output)
     return index
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
 # Define your allowed IP addresses or network ranges here
 allowed_networks = ['192.168.83.', '192.168.160.', '192.168.146.','192.168.0']
