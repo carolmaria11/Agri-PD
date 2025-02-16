@@ -1,16 +1,17 @@
 {
   "builds": [
     {
-      "src": "index.py",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "python3.12"
-      }
+      "src": "app.py",
+      "use": "@vercel/python"
     }
   ],
-  "build": {
-    "env": {
-      "PIP_NO_CACHE_DIR": "false"
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
     }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.12"
   }
 }
