@@ -11,9 +11,6 @@
   "build": {
     "env": {
       "PIP_NO_CACHE_DIR": "false"
-    },
-    "commands": [
-      "pip install --upgrade pip setuptools wheel"
-    ]
+    }
   }
 }
